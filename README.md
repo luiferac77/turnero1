@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📅 Sistema de Turnero
 
-## Getting Started
+Una aplicación web moderna para gestionar y reservar turnos de forma fácil y rápida.
 
-First, run the development server:
+## ✨ Características
+
+- ✅ **Reservar turnos** - Formulario intuitivo para reservas
+- 📋 **Gestionar turnos** - Ver y cancelar tus turnos
+- 📅 **Calendario interactivo** - Selecciona fechas disponibles
+- ⏰ **Horarios dinámicos** - Horarios actualizados según disponibilidad
+- 🎨 **Diseño moderno** - Interfaz responsive con Tailwind CSS
+- 🌓 **Modo oscuro** - Soporte para tema claro y oscuro
+- ⚡ **Rápido** - Construido con Next.js 16 y React 19
+
+## 🚀 Inicio Rápido
+
+### Requisitos Previos
+- Node.js 18+ 
+- npm o yarn
+
+### Instalación
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/luiferac77/turnero1.git
+cd turnero1
+
+# Instalar dependencias
+npm install
+
+# Ejecutar servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📖 Uso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Reservar un Turno
+1. Ve a la pestaña "Reservar Turno"
+2. Completa el formulario con tus datos:
+   - Nombre completo
+   - Email
+   - Teléfono
+   - Servicio deseado
+   - Fecha (hasta 30 días adelante)
+   - Hora disponible
+3. Haz clic en "Reservar Turno"
 
-## Learn More
+### Ver Mis Turnos
+1. Ve a la pestaña "Mis Turnos"
+2. Ingresa tu email
+3. Haz clic en "Buscar"
+4. Verás todos tus turnos activos
+5. Puedes cancelar un turno si es necesario
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗️ Estructura del Proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+turnero1/
+├── app/
+│   ├── api/
+│   │   └── turnos/
+│   │       ├── route.ts              # GET/POST turnos
+│   │       ├── horarios/route.ts     # GET horarios disponibles
+│   │       └── [id]/route.ts         # GET/DELETE turno específico
+│   ├── page.tsx                      # Página principal
+│   ├── layout.tsx                    # Layout raíz
+│   └── globals.css                   # Estilos globales
+├── components/
+│   ├── FormularioReserva.tsx         # Formulario de reserva
+│   └── MisTurnos.tsx                 # Vista de mis turnos
+├── lib/
+│   └── turnos.ts                     # Lógica de turnos
+├── types/
+│   └── turno.ts                      # Tipos TypeScript
+├── package.json
+└── tsconfig.json
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Servicios Disponibles
 
-## Deploy on Vercel
+- Corte de cabello
+- Afeitado
+- Cuidado de barba
+- Coloración
+- Tratamiento capilar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⏳ Horarios
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Mañana:** 09:00 - 11:30  
+**Tarde:** 14:00 - 17:00  
+**Intervalo:** 30 minutos  
+**Máximo 3 turnos por horario**
+
+## 🛠️ Stack Tecnológico
+
+- **Frontend:** React 19, Next.js 16
+- **Styling:** Tailwind CSS 4
+- **Lenguaje:** TypeScript 5
+- **Linting:** ESLint 9
+
+## 📝 Scripts Disponibles
+
+```bash
+npm run dev      # Inicia servidor de desarrollo
+npm run build    # Construye para producción
+npm start        # Inicia servidor de producción
+npm run lint     # Ejecuta linting
+```
+
+## 🔐 Almacenamiento de Datos
+
+Actualmente, la aplicación almacena turnos en memoria. Para una aplicación de producción, se recomienda usar una base de datos como:
+- PostgreSQL
+- MongoDB
+- Firebase
+
+## 🚀 Deployment
+
+La aplicación está lista para ser desplegada en:
+- Vercel (recomendado)
+- Netlify
+- AWS
+- Otros servidores Node.js
+
+## 📞 Soporte
+
+Para reportar bugs o sugerencias, abre un issue en el repositorio.
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
